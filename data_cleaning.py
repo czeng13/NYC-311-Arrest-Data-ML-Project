@@ -59,7 +59,7 @@ columns_with_null = [column for column in service_requests_sdf.columns if null_c
 final_path = 's3a://cis4130projectcz/raw/cleaned_service_data'
 merged_sdf.write.parquet(final_path, mode="overwrite", compression="snappy")
 
-Cleaning Arrest Data:
+
 arrest_bucket = s3.Bucket('cis4130projectcz-arrest')
 all_arrest_files = []
 arrest_file_names = [x.key for x in arrest_bucket.objects.all()]
